@@ -1,0 +1,72 @@
+body {
+	
+	background:  url(макет.png);
+	font-family:Arial;	
+	
+}
+
+.orange{
+	color: rgb(235, 80, 23);
+}
+.main-menu li {
+    display:inline-block;
+	margin-left:80px;
+	vertical-align:middle;
+	font-size:15px;
+	line-height:70px;
+
+}
+.main-menu a{
+	color:#ffffff;
+	text-decoration:none;
+	
+	
+}
+section{
+padding-bottom:16px;
+padding: 13px 23px;
+font-size:18px;
+line-height:40px;
+
+}
+
+h2{
+	margin-left: 43%;
+	padding-top:10px;
+}
+
+h1{
+	margin-left: 4%;
+	padding-top:20px;
+	
+}
+
+footer li
+{ display:inline-block;
+	margin-left:50px;
+	vertical-align:middle;
+	font-size:15px;
+	
+	margin-bottom: -150px;
+
+}
+
+footer a{
+	color:#ffffff;
+}
+
+input[type="text"]{
+  margin-left: 10px;
+}
+
+input[type="submit"]{
+    display:inline-block;
+	padding:15px;
+	font-size:15px;
+	line-height:10px;
+	text-align:center;
+	color:green;
+	background:#43c600;
+	border-radius: 10px;
+}
+

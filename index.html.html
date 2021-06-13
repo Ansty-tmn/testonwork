@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta charset="UTF-8">
+<title>World Bank</title>
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+/* Локализация datepicker */
+$.datepicker.regional['ru'] = {
+	closeText: 'Закрыть',
+	prevText: 'Предыдущий',
+	nextText: 'Следующий',
+	currentText: 'Сегодня',
+	monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+	monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+	dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+	dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+	dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+	weekHeader: 'Не',
+	dateFormat: 'dd.mm.yy',
+	firstDay: 1,
+	isRTL: false,
+	showMonthAfterYear: false,
+	yearSuffix: ''
+};
+$.datepicker.setDefaults($.datepicker.regional['ru']);
+</script>
+</head>
+
+<body background="макет.png">
+<h2 class="orange" >8-800-100-5005 <br>+7(3452)522-000</h2>
+
+<header class="main-header">
+<nav class="main-menu">
+<li><a href="#">Кредиты</a></li>
+<li><a href="#">Вклады</a></li>
+<li><a href="#">Дебетовая карта</a></li>
+<li><a href="#">Страхование</a></li>
+<li><a href="#">Друзья</a></li>
+<li><a href="#">Интернет-банк</a></li>
+</nav>
+</header>
+
+<div><section><form action="calc.php" method="post" class="calculate-form">
+<table>
+<h1 class="orange" >Калькулятор</h1>
+<td>
+   <label for="data">Дата оформления вклад</label></td>
+                                                    <td>
+													<input  type="date" id= "date" ><input type="text" id="datepicker">
+													</td>
+<tr>
+    <td>
+	<label for="sumDeposit">Суммма вклада</label></td>
+                                                   <td>
+                                                      <input id= "sumDeposit" min="1000" max="3000000" oninput="RangeForSumDeposit2()"><input type="range" min="1000" max="3000000" id= "RsumDeposit" oninput="RangeForSumDeposit()" >  
+													  
+													  </td>
+</tr>
+<tr>
+    <td>
+       <label for="srok">  Срок вклада</label></td>
+	      <td>
+              <select >
+                     <option value="1">1 год </option>
+                     <option value="2">2 года</option> 
+                     <option value="3">3 года</option> 
+                     <option value="4">4 года </option> 
+                     <option value="5">5 лет</option> 
+                     </select></td>
+</tr>
+<tr>
+    <td>Пополнение вклада</td>
+	                         <td>
+                                <label for="no"><input type="radio" id= "no" name="deposit" checked>Нет </label><input type="radio" id= "yes" name="deposit" >Да
+						     </td>
+</tr>
+<tr>
+   <td>
+   <label for="deposit2">Сумма пополнения вклада</label></td>
+                                                         <td>
+														 <input id= "deposit2" min="1000" max="3000000"  oninput="RangeForDeposit()"><input type="range" min="1000" max="3000000" id= "Rdeposit2"  oninput="InputForDeposit()" >
+														 </td>
+</tr>
+<tr>
+    <td>
+	   
+	   <input type="submit" class="submit-form" name="submit" value="Рассчитать"> 
+	</td>
+	                              <td>
+                                     <div class="value" id="Results" >Результат</div>
+                                  </td>
+</tr>
+</table>
+</form>
+</section>
+</div>
+
+<footer><li><a href="#">Кредиты</a></li>
+<li><a href="#">Вклады</a></li>
+<li><a href="#">Дебетовая карта</a></li>
+<li><a href="#">Страхование</a></li>
+<li><a href="#">Друзья</a></li>
+<li><a href="#">Интернет-банк</a></li> </footer>
+
+<script src="main.js"></script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+</body>
+<html>
+
